@@ -67,10 +67,10 @@ fn parse_game(line: &str) -> Vec<(u32, u32, u32)> {
 
 #[cfg(test)]
 mod test {
-    use crate::common::Solution;
-    use indoc::indoc;
-
     use super::Day02;
+    use crate::common::Solution;
+
+    use indoc::indoc;
 
     const INPUT: &str = indoc! {"
         Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -87,6 +87,6 @@ mod test {
 
     #[test]
     fn part_b() {
-        assert_eq!(Day02.part_b(INPUT), 2286.into())
+        assert_eq!(Day02.part_b(INPUT), 2286.into());
     }
 }

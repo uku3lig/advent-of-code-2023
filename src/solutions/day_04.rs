@@ -76,9 +76,9 @@ fn parse_card(line: &str) -> Card {
 
 #[cfg(test)]
 mod test {
+    use super::Day04;
     use crate::common::Solution;
 
-    use super::Day04;
     use indoc::indoc;
 
     const INPUT: &str = indoc! {"
@@ -92,11 +92,11 @@ mod test {
 
     #[test]
     fn part_a() {
-        assert_eq!(Day04.part_a(INPUT), 13.into())
+        assert_eq!(Day04.part_a(INPUT), 13.into());
     }
 
     #[test]
     fn part_b() {
-        assert_eq!(Day04.part_b(INPUT), 30.into())
+        assert_eq!(Day04.part_b(INPUT), 30.into());
     }
 }

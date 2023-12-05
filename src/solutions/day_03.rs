@@ -92,10 +92,10 @@ fn get_gears(input: &str) -> Vec<(usize, usize)> {
 
 #[cfg(test)]
 mod test {
-    use indoc::indoc;
-
     use super::Day03;
     use crate::common::Solution;
+
+    use indoc::indoc;
 
     const INPUT: &str = indoc! {"
         467..114..
