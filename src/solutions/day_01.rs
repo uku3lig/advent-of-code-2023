@@ -91,3 +91,38 @@ fn find_words(input: &str) -> Vec<(usize, char)> {
 
     words
 }
+
+#[cfg(test)]
+mod test {
+    use super::Day01;
+    use crate::common::Solution;
+
+    use indoc::indoc;
+
+    const INPUT_A: &str = indoc! {"
+        1abc2
+        pqr3stu8vwx
+        a1b2c3d4e5f
+        treb7uchet    
+    "};
+
+    const INPUT_B: &str = indoc! {"
+        two1nine
+        eightwothree
+        abcone2threexyz
+        xtwone3four
+        4nineeightseven2
+        zoneight234
+        7pqrstsixteen
+    "};
+
+    #[test]
+    fn part_a() {
+        assert_eq!(Day01.part_a(INPUT_A), 142.into());
+    }
+
+    #[test]
+    fn part_b() {
+        assert_eq!(Day01.part_b(INPUT_B), 281.into());
+    }
+}
