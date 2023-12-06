@@ -80,32 +80,17 @@ struct Race {
 
 impl Race {
     fn winning_times(&self) -> u64 {
-        // avoids iterating over ALL the times
-        // you could technically make this even faster using math but im lazy :3
+        // +1 because you're not beating the distance if you tie it
+        let delta = self.time.pow(2) - 4 * (self.best_distance + 1);
+        let sq_delta = (delta as f64).sqrt();
 
-        let first_time = 't: {
-            for t in 0..=self.time {
-                let distance = t * (self.time - t);
-                if distance > self.best_distance {
-                    break 't t;
-                }
-            }
+        let t1 = (self.time as f64 - sq_delta) / 2.0;
+        let t1 = t1.ceil() as u64;
 
-            u64::MAX
-        };
+        let t2 = (self.time as f64 + sq_delta) / 2.0;
+        let t2 = t2.floor() as u64;
 
-        let last_time = 't: {
-            for t in (0..=self.time).rev() {
-                let distance = t * (self.time - t);
-                if distance > self.best_distance {
-                    break 't t;
-                }
-            }
-
-            u64::MAX
-        };
-
-        last_time - first_time + 1
+        t2 - t1 + 1
     }
 }
 
