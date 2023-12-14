@@ -41,7 +41,7 @@ impl Solution for Day10 {
         (distance / 2).into()
     }
 
-    fn part_b(&self, input: &str) -> Answer {
+    fn part_b(&self, _input: &str) -> Answer {
         Answer::Unimplemented
     }
 }
